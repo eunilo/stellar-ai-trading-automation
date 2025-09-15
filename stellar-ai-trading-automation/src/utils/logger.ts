@@ -313,4 +313,5 @@ export const requestLogger = (req: any, res: any, next: any) => {
 };
 
 // Export default logger
+export { logger };
 export default logger;
