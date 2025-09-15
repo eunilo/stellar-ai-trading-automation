@@ -10,7 +10,7 @@
 
 ## 🚀 Visão Geral
 
-O **Stellar AI Trading Automation** é uma plataforma revolucionária que combina inteligência artificial, machine learning e protocolos DeFi para automatizar operações de trading e otimização de rendimento no ecossistema Stellar. Desenvolvido especificamente para o **Soroswap Hackathon 2024**, este projeto demonstra o futuro do trading inteligente na blockchain Stellar.
+O **Stellar AI Trading Automation** é uma plataforma revolucionária que combina inteligência artificial, machine learning e protocolos DeFi para automatizar operações de trading e otimização de rendimento no ecossistema Stellar. Desenvolvido especificamente para o **Meridian 2025**, este projeto demonstra o futuro do trading inteligente na blockchain Stellar.
 
 ### ✨ Principais Características
 
@@ -265,6 +265,6 @@ Este projeto foi desenvolvido para o **Soroswap Hackathon 2024** e demonstra:
 
 ---
 
-**Desenvolvido com ❤️ para o Soroswap Hackathon 2024**
+**Desenvolvido com ❤️ para o Meridian Hackathon 2025**
 
 *Demonstrando o futuro do trading inteligente na Stellar*
