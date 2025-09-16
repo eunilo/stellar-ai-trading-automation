@@ -1,0 +1,37 @@
+# Stellar AI Trading Automation - Development Dockerfile
+# Development environment with hot reload and debugging
+
+FROM node:18-alpine
+
+# Install dumb-init for proper signal handling
+RUN apk add --no-cache dumb-init
+
+# Create app user
+RUN addgroup -g 1001 -S nodejs && \
+    adduser -S stellar-ai -u 1001
+
+# Set working directory
+WORKDIR /app
+
+# Copy package files
+COPY package*.json ./
+
+# Install all dependencies (including dev dependencies)
+RUN npm install
+
+# Copy source code
+COPY . .
+
+# Create necessary directories
+RUN mkdir -p logs models data && \
+    chown -R stellar-ai:nodejs logs models data
+
+# Switch to non-root user
+USER stellar-ai
+
+# Expose ports
+EXPOSE 3000 9229
+
+# Start application in development mode
+ENTRYPOINT ["dumb-init", "--"]
+CMD ["npm", "run", "dev"]
