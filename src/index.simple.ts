@@ -10,7 +10,7 @@ import rateLimit from 'express-rate-limit';
 
 const app = express();
 const PORT = process.env['PORT'] || 3000;
-const HOST = process.env['HOST'] || 'localhost';
+const HOST = process.env['HOST'] || '0.0.0.0';
 const strategyStatus = new Map<string, 'ACTIVE' | 'PAUSED'>();
 const investorStates = new Map<string, {
   strategyId: string;
@@ -22,7 +22,12 @@ let platformTotalFees = 0;
 
 // Middleware
 app.use(helmet());
-app.use(cors());
+app.use(cors({
+  origin: true, // Aceita qualquer origem (incluindo ngrok)
+  credentials: true,
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization', 'X-Requested-With']
+}));
 app.use(compression());
 app.use(morgan('combined'));
 app.use(express.json({ limit: '10mb' }));
